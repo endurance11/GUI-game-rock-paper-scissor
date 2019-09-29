@@ -1,5 +1,6 @@
 import random
 import time
+import os
 def winner(choice):
     time.sleep(0.5)
     compchoice=random.randint(1,3)
@@ -40,6 +41,7 @@ from tkinter import Button,PhotoImage,Image
 from tkinter import Label  
 window = tkinter.Tk()
 window.title("Rock-Paper-Scissor")   
+cwd=os.getcwd()
 
 rock=Button(window,text="Rock" ,bg="tomato" ,fg="black" ,width='22', height='2' ,font=("Arial Bold",10),command=win_r)
 rock.grid(row=1,column=0)
@@ -50,16 +52,16 @@ paper.grid(row=1,column=1)
 scissor=Button(window,text="Scissor" ,bg="springgreen" , fg="Black" ,width="22" , height='2',font=('Arial Bold',10),command=win_s)
 scissor.grid(row=1 , column=2)
 
-rock_image= PhotoImage(file="/home/yash/Python/rock.png")
+rock_image= PhotoImage(file=cwd+"/rock.png")
 Label(window,image=rock_image,bg="white").grid(row=0,column=0)
  
-paper_image=PhotoImage(file="/home/yash/Python/paper.png")
+paper_image=PhotoImage(file=cwd+"/paper.png")
 Label(window, image=paper_image ,bg="black").grid(row=0,column=1)
 
-scissor_image=PhotoImage(file="/home/yash/Python/scis.png")
+scissor_image=PhotoImage(file=cwd+"/scis.png")
 Label(window,image=scissor_image,bg="black").grid(row=0,column=2)
 
-winner_image=PhotoImage(file="/home/yash/Python/winner.png")
+winner_image=PhotoImage(file=cwd+"/winner.png")
 Label(window,image=winner_image,bg="black").grid(row=0,column=3)
 
 output = tkinter.Label(window, width=24, fg = "black", text="What's your choice?",bg="orange",height='3')
